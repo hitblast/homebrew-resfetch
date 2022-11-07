@@ -8,6 +8,7 @@ class Resfetch < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "resfetch"
+    system "cargo", "build", "--release", "--bin", "resfetch"
+    bin.install "target/release/resfetch"
   end
 end
