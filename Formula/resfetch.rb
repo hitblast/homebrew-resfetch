@@ -8,6 +8,7 @@ class Resfetch < Formula
   depends_on "rust" => :build
 
   def install
+    system "cargo", "build", "--release"
     system "cargo", "install", "--path", "."
   end
 end
